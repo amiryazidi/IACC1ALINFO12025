@@ -38,9 +38,12 @@ export class ResidenceService {
   addResidence(res:Residence) : Observable<Residence>{
     return this.http.post<Residence>('http://localhost:3000/residences',res)
   }
-  
+
   deleteResidence(id:number) :Observable<Residence>{
     return this.http.delete<Residence>('http://localhost:3000/residences/'+id)
+}
+updateResidence(res:Residence, id:number):Observable<Residence>{
+  return this.http.put<Residence>('http://localhost:3000/residences/'+id,res)
 }
 
 }

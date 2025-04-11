@@ -6,6 +6,13 @@
       "address": 100,
       "image": "image.jpg",
       "status": "active"
+    },
+    {
+      "name": "update",
+      "adress": "esprit",
+      "image": "test",
+      "status": "active",
+      "id": "1f8c"
     }
   ]
 }

@@ -13,6 +13,7 @@ const routes: Routes = [
   {path :'residence', component : ResidenceComponent},
   {path :'login', component : LoginComponent},
   {path :'addRes', component : FormResidenceComponent},
+  {path :'addRes/:id', component : FormResidenceComponent},
   {path :'detailRes/:id', component : DetailResComponent}, // route parametre
   {path: '' , redirectTo : '/login', pathMatch : 'full'},  // route par defaut
   {path: '**' , component : NotFoundComponent},  // route not found
