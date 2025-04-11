@@ -1,0 +1,26 @@
+<form [formGroup]="residenceForm">
+
+  <label>name</label>
+  <input class="form-control" type="text" placeholder="enter name"  formControlName="name">
+
+  <div class="alert alert-danger" *ngIf="residenceForm.controls['name'].invalid && residenceForm.controls['name'].touched" >
+    <p *ngIf="residenceForm.controls['name'].hasError('required')"> name est obligatoire</p>
+    <p *ngIf="residenceForm.controls['name'].hasError('minlength')"> name doit etre superieur a 4 caracteres</p>
+  </div>
+
+  <label>adress</label>
+  <input class="form-control" type="text" placeholder="enter adress" formControlName="adress">
+  <div class="alert alert-danger" *ngIf="residenceForm.controls['adress'].invalid && residenceForm.controls['adress'].touched" >
+    <p *ngIf="residenceForm.controls['adress'].hasError('required')"> adress est obligatoire</p>
+  </div>
+
+  <label>image</label>
+  <input class="form-control" type="text" placeholder="enter image" formControlName="image">
+
+  <label>status</label>
+  <input class="form-control" type="text" placeholder="enter status" formControlName="status">
+
+
+  <input class="btn btn-info" type="submit" value="save" (click)="save()"   [disabled]="residenceForm.invalid">
+
+  </form>

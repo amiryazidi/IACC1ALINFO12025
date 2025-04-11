@@ -1,0 +1,19 @@
+
+<a routerLink="/addRes" class="btn btn-primary">Add Residence</a>
+
+<ul class="residence-list">
+  <li *ngFor="let r of listResidences" class="residence-item">
+    <img [src]="r.image" alt="residence" class="residence-image">
+    <div class="residence-info">
+      <h3>{{ r.name }}</h3>
+
+      <p [ngClass]="{'status-open': r.status === 'Ouvert', 'status-closed': r.status === 'Fermé'}">
+        <strong>Statut :</strong> {{ r.status }}
+      </p>
+
+      <button class="btn btn-secondary" (click)="show(r.address)">show location</button>
+      <button class="btn btn-info" [routerLink]="['/detailRes',r.id]" >detail</button>
+      <button class="btn btn-info"  (click)="supp(r.id)" >delete</button>
+    </div>
+  </li>
+</ul>

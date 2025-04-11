@@ -1,0 +1,39 @@
+<p>login works!</p>
+
+
+<label>login</label>
+<input class="form-control" type="text" placeholder="enter name"  [formControl]="lg">
+
+<label>password</label>
+<input class="form-control" type="text" placeholder="enter password" [formControl]="pwd">
+
+<input class="btn btn-info" type="submit" value="save" (click)="save()"   [disabled]="lg.invalid || pwd.invalid">
+
+
+<h1> FormGroup</h1>
+
+<form [formGroup]="loginForm">
+
+<label>login</label>
+<input class="form-control" type="text" placeholder="enter name"  formControlName="login">
+
+<div class="alert alert-danger" *ngIf="loginForm.controls['login'].invalid" >
+  <p *ngIf="loginForm.controls['login'].hasError('required')"> login est obligatoire</p>
+  <p *ngIf="loginForm.controls['login'].hasError('minlength')"> login doit etre superieur a 4 caracteres</p>
+</div>
+
+<label>password</label>
+<input class="form-control" type="text" placeholder="enter password" formControlName="password">
+
+<label>email</label>
+<input class="form-control" type="text" placeholder="enter email" formControlName="email">
+
+<label>tel</label>
+<input class="form-control" type="text" placeholder="enter pastelsword" formControlName="telephone">
+
+<label>adresse</label>
+<input class="form-control" type="text" placeholder="enter adresse" formControlName="adresse">
+
+<input class="btn btn-info" type="submit" value="save" (click)="save()"   [disabled]="loginForm.invalid">
+
+</form>

@@ -1,0 +1,30 @@
+
+<label>Color </label>
+<input class="form-control" type="text" placeholder="enter color"    [(ngModel)]="color">
+
+<label>search by price </label>
+<input class="form-control" type="text" placeholder="enter price"    [(ngModel)]="priceUser">
+
+
+<p [style.backgroundColor]="color" >Property Binding  </p>
+
+
+<div class="row">
+<div class="col" *ngFor="let p of product, let i = index">
+    <ng-container  *ngIf="p.price>priceUser || priceUser ==null">
+<div  class="card" style="width: 18rem;">
+  <img class="card-img-top" [src]="p.image" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Title :  {{p.title}}</h5>
+    <p class="card-text">Price :  {{p.price}}</p>
+    <p class="card-text">Quantity :  {{p.quantity}}</p>
+    <button class="btn btn-primary" (click)="show()">save</button>
+    <button [disabled]="p.quantity==0" class="btn btn-secondary" (click)="buy(p.id)">buy</button>
+  </div>
+</div>
+</ng-container>
+</div>
+</div>
+
+
+

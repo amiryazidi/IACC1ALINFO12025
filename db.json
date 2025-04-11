@@ -1,0 +1,11 @@
+{
+  "residences": [
+    {
+      "id": "1",
+      "name": "a title",
+      "address": 100,
+      "image": "image.jpg",
+      "status": "active"
+    }
+  ]
+}

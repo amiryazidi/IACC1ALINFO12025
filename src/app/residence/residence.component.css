@@ -1,0 +1,33 @@
+.residence-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.residence-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.residence-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.residence-info {
+  flex: 1;
+}
+
+.status-open {
+  color: green;
+  font-weight: bold;
+}
+
+.status-closed {
+  color: red;
+  font-weight: bold;
+}
